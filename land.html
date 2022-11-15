@@ -10,6 +10,22 @@
     <!-- Import Component -->
     <home-link></home-link>
 
+    <div>
+      <p>কাঠা to শতাংশ</p>
+      <input type="number" id="katha" /> কাঠা =
+      <span id="shotangsho"> শতাংশ</span>
+      <br />
+      <br />
+      <button type="button" onclick="toShotangsho()">Convert</button>
+    </div>
+
+    <script>
+      function toShotangsho() {
+        var x = document.getElementById("katha").value;
+        var y = x * 1.65;
+        document.getElementById("shotangsho").innerHTML = y + " শতাংশ(প্রায়)";
+      }
+    </script>
     <script src="./link.js"></script>
   </body>
 </html>
