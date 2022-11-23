@@ -1,32 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Land</title>
-  </head>
-  <body>
-    <!-- Import Component -->
-    <home-link></home-link>
+<header-comp></header-comp>
+<!-- Import Component -->
+<home-link></home-link>
+<div class="row first-row">
+  <div class="col">
+    <p>কাঠা to শতাংশ</p>
+    <input type="number" id="katha" /> কাঠা =
+    <span id="shotangsho"> শতাংশ (ছতক) </span>
+    <br />
+    <br />
+    <button type="button" onclick="toShotangsho()">Convert</button>
+  </div>
+  <div class="col">
+    <p>শতাংশ to কাঠা</p>
+    <input type="number" id="s" /> শতাংশ (ছতক) =
+    <span id="k"> কাঠা</span>
+    <br />
+    <br />
+    <button type="button" onclick="toKatha()">Convert</button>
+  </div>
+  <div class="col">
+    <p>কাঠা to Square feet</p>
+    <input type="number" id="k2" /> কাঠা =
+    <span id="sf"> Square feet</span>
+    <br />
+    <br />
+    <button type="button" onclick="toSqf()">Convert</button>
+  </div>
+  <div class="col">
+    <p>শতাংশ to Square feet</p>
+    <input type="number" id="s2" /> শতাংশ =
+    <span id="sf2"> Square feet</span>
+    <br />
+    <br />
+    <button type="button" onclick="ShtoSqf()">Convert</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <p>বিঘা to কাঠা</p>
+    <input type="number" id="bh" /> বিঘা =
+    <span id="kth"> কাঠা</span>
+    <br />
+    <br />
+    <button type="button" onclick="BhToKth()">Convert</button>
+  </div>
+  <div class="col">
+    <p>কাঠা to বিঘা</p>
+    <input type="number" id="bh2" /> কাঠা =
+    <span id="kth2"> বিঘা</span>
+    <br />
+    <br />
+    <button type="button" onclick="KthToBh()">Convert</button>
+  </div>
+</div>
+<button type="button" onclick="Wrelaod()">Refresh</button>
+<script>
+  function Wrelaod() {}
+  //
+  function toShotangsho() {
+    var x = document.getElementById("katha").value;
+    var y = x * 1.65;
+    document.getElementById("shotangsho").innerHTML = y + " শতাংশ(প্রায়)";
+  }
+  function toKatha() {
+    var x = document.getElementById("s").value;
+    var y = x / 1.65;
+    document.getElementById("k").innerHTML = y + " কাঠা(প্রায়)";
+  }
 
-    <div>
-      <p>কাঠা to শতাংশ</p>
-      <input type="number" id="katha" /> কাঠা =
-      <span id="shotangsho"> শতাংশ</span>
-      <br />
-      <br />
-      <button type="button" onclick="toShotangsho()">Convert</button>
-      <header-comp></header-comp>
-    </div>
-    <footer-comp></footer-comp>
+  function toSqf() {
+    var x = document.getElementById("k2").value;
+    var y = x * 720;
+    document.getElementById("sf").innerHTML = y + " Square feet(প্রায়)";
+  }
+  function ShtoSqf() {
+    var x = document.getElementById("s2").value;
+    var y = (720 / 1.65) * x;
+    document.getElementById("sf2").innerHTML = y + " Square feet(প্রায়)";
+  }
 
-    <script>
-      function toShotangsho() {
-        var x = document.getElementById("katha").value;
-        var y = x * 1.65;
-        document.getElementById("shotangsho").innerHTML = y + " শতাংশ(প্রায়)";
-      }
-    </script>
-  </body>
-</html>
+  //
+  function BhToKth() {
+    var x = document.getElementById("bh").value;
+    var y = x * 20;
+    document.getElementById("kth").innerHTML = y + " বিঘা(প্রায়)";
+  }
+  function KthToBh() {
+    var x = document.getElementById("bh2").value;
+    var y = x / 20;
+    document.getElementById("kth2").innerHTML = y + " বিঘা(প্রায়)";
+  }
+</script>
+
+<script src="./link.js"></script>
+<script src="./header.js"></script>

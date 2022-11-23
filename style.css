@@ -8,4 +8,19 @@ li a:hover {
 }
 .row {
   display: flex;
+  border-top: 1px solid rgb(166, 255, 0);
+  margin-top: 5%;
+}
+.first-row {
+  margin-top: 0 !important;
+}
+.col {
+  margin-left: 3%;
+  border-left: 2px dotted rgb(169, 235, 169);
+  padding-left: 3%;
+}
+.col:first-child {
+  margin-left: 0;
+  border-left: 0;
+  padding-left: 0;
 }
