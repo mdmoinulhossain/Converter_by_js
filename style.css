@@ -1,0 +1,11 @@
+li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+li a:hover {
+  letter-spacing: 2px;
+}
+.row {
+  display: flex;
+}
