@@ -1,6 +1,6 @@
 class HomeComponent extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `<a href="./index.html">&#8592; Back to Home</a>`;
+    this.innerHTML = `<button><a href="./index.html" style="text-decoration: none;">&#8592; Back to Home</a></button>`;
   }
 }
 

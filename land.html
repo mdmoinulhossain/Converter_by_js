@@ -1,18 +1,19 @@
 <header-comp></header-comp>
 <!-- Import Component -->
 <home-link></home-link>
+<button type="button" onclick="Wrelaod()">Refresh</button>
 <div class="row first-row">
   <div class="col">
     <p>কাঠা to শতাংশ</p>
     <input type="number" id="katha" /> কাঠা =
-    <span id="shotangsho"> শতাংশ (ছতক) </span>
+    <span id="shotangsho"> শতাংশ (শতক) </span>
     <br />
     <br />
     <button type="button" onclick="toShotangsho()">Convert</button>
   </div>
   <div class="col">
     <p>শতাংশ to কাঠা</p>
-    <input type="number" id="s" /> শতাংশ (ছতক) =
+    <input type="number" id="s" /> শতাংশ (শতক) =
     <span id="k"> কাঠা</span>
     <br />
     <br />
@@ -52,10 +53,34 @@
     <br />
     <button type="button" onclick="KthToBh()">Convert</button>
   </div>
+  <div class="col">
+    <p>Square feet to কাঠা</p>
+    <input type="number" id="sf3" /> Square feet =
+    <span id="kth3"> কাঠা</span>
+    <br />
+    <br />
+    <button type="button" onclick="SqfToKth()">Convert</button>
+  </div>
+  <div class="col">
+    <p>Square feet to শতাংশ (শতক)</p>
+    <input type="number" id="sf4" /> Square feet =
+    <span id="sht4"> শতাংশ (শতক)</span>
+    <br />
+    <br />
+    <button type="button" onclick="SqfToSht()">Convert</button>
+  </div>
 </div>
-<button type="button" onclick="Wrelaod()">Refresh</button>
+
+<div class="row">
+  <div class="col">
+    * ১ একর = ৩ বিঘা = ৬০.৬০ কাঠা = ১০০ শতাংশ (শতক) = ৪৩২০০ Square feet
+  </div>
+</div>
+
 <script>
-  function Wrelaod() {}
+  function Wrelaod() {
+    window.location.reload();
+  }
   //
   function toShotangsho() {
     var x = document.getElementById("katha").value;
@@ -73,17 +98,30 @@
     var y = x * 720;
     document.getElementById("sf").innerHTML = y + " Square feet(প্রায়)";
   }
+
+  function SqfToKth() {
+    var x = document.getElementById("sf3").value;
+    var y = x / 720;
+    document.getElementById("kth3").innerHTML = y + " কাঠা(প্রায়)";
+  }
+
   function ShtoSqf() {
     var x = document.getElementById("s2").value;
     var y = (720 / 1.65) * x;
     document.getElementById("sf2").innerHTML = y + " Square feet(প্রায়)";
   }
 
+  function SqfToSht() {
+    var x = document.getElementById("sf4").value;
+    var y = x / 436.36;
+    document.getElementById("sht4").innerHTML = y + " শতাংশ (শতক)(প্রায়)";
+  }
+
   //
   function BhToKth() {
     var x = document.getElementById("bh").value;
     var y = x * 20;
-    document.getElementById("kth").innerHTML = y + " বিঘা(প্রায়)";
+    document.getElementById("kth").innerHTML = y + " কাঠা(প্রায়)";
   }
   function KthToBh() {
     var x = document.getElementById("bh2").value;
