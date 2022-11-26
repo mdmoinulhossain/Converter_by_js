@@ -73,11 +73,100 @@
 
 <div class="row">
   <div class="col">
+    <p>শতাংশ to বিঘা</p>
+    <input type="number" id="sht5" /> শতাংশ =
+    <span id="bhg5"> বিঘা</span>
+    <br />
+    <br />
+    <button type="button" onclick="ShotangshoToBigha()">Convert</button>
+  </div>
+  <div class="col">
+    <p>বিঘা to শতাংশ</p>
+    <input type="number" id="bhg6" /> বিঘা =
+    <span id="sht6"> শতাংশ</span>
+    <br />
+    <br />
+    <button type="button" onclick="BighaToShotangsho()">Convert</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
     * ১ একর = ৩ বিঘা = ৬০.৬০ কাঠা = ১০০ শতাংশ (শতক) = ৪৩২০০ Square feet
+  </div>
+  <div class="col">
+    <button><a href="">View More</a></button>
   </div>
 </div>
 
 <script>
+  /*
+  // Syatem 1
+  window.oncontextmenu = function () {
+    console.log("HI, How Are You? Welcome to the console!");
+    return false;
+  };
+  */
+
+  var message = "What do you want?";
+  function rtclickcheck(keyp) {
+    if (navigator.appName == "Netscape" && keyp.which == 3) {
+      alert(message);
+      return false;
+    }
+
+    if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) {
+      alert(message);
+      return false;
+    }
+    console.log("HI, How Are You? Welcome to the console!");
+  }
+  document.onmousedown = rtclickcheck;
+
+  // Disable ctrl + u
+  document.onkeydown = function (e) {
+    if (
+      e.ctrlKey &&
+      (e.keyCode === 67 ||
+        e.keyCode === 86 ||
+        e.keyCode === 85 ||
+        e.keyCode === 117)
+    ) {
+      alert("HI, How Are You?");
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+  // Disable ctrl + u and ctrl + shift + i
+  document.onkeydown = function (f) {
+    if (
+      f.ctrlKey &&
+      f.shiftKey &&
+      f.keyCode === 73
+      // shift key
+      // e.keyCode === 16 ||
+      // i  key
+      //  e.keyCode === 73
+    ) {
+      alert("NOT");
+      return false;
+    } else if (
+      f.ctrlKey &&
+      (f.keyCode === 67 ||
+        f.keyCode === 86 ||
+        f.keyCode === 85 ||
+        f.keyCode === 117)
+    ) {
+      alert("vag");
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+  // Reload the page
   function Wrelaod() {
     window.location.reload();
   }
@@ -127,6 +216,16 @@
     var x = document.getElementById("bh2").value;
     var y = x / 20;
     document.getElementById("kth2").innerHTML = y + " বিঘা(প্রায়)";
+  }
+  function ShotangshoToBigha() {
+    var x = document.getElementById("sht5").value;
+    var y = x / 33;
+    document.getElementById("bhg5").innerHTML = y + " বিঘা(প্রায়)";
+  }
+  function BighaToShotangsho() {
+    var x = document.getElementById("bhg6").value;
+    var y = x * 33;
+    document.getElementById("sht6").innerHTML = y + " শতাংশ(প্রায়)";
   }
 </script>
 
